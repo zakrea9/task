@@ -11,7 +11,7 @@
             pass:
             <input type="password" name='pass'>
             <br>
-            <input type="submit" name='login'>
+            <input type="submit" value="submit">
         </form>
     </body>
 </html>

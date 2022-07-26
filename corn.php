@@ -1,15 +1,20 @@
-<?php 
-$dsn = 'mysql: host-localhost;dbname-test';
-$user = 'root';
-$pass = '';
-$lang = array(
-    PDO::MYSQL_ATTR_INIT_COMMAND =>"SET NAMES UTF8",
-);
-try{
-    $db  = new PDO($dsn,$user,$pass,$lang,);
-    $db-> setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);
+<?php
+include('C:\xampp\htdocs\index\index.php');
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
-catch(PDOException $e){
-    echo"have error";
+
+
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $name=$_POST['user'];
+    $password=$_POST['pass'];
+    echo $name . $password;
 }
-?>
